@@ -1,0 +1,274 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11', 'kern';
+    font-variant-ligatures: common-ligatures;
+    font-synthesis: none;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #08090C;
+    color: #f1f5f9;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* High-Resolution Font Families with Crisp Outlines */
+.font-display {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', Impact, 'Arial Black', sans-serif;
+  letter-spacing: 0.04em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400; /* Bebas Neue is 400; prevent muddy browser faux-bold */
+}
+
+.font-marker {
+  font-family: 'Permanent Marker', cursive, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400; /* Prevent faux-bold distortion */
+}
+
+.font-stencil {
+  font-family: 'Black Ops One', 'Saira Stencil One', Impact, sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400; /* Stencil display fonts are designed at 400; prevent pixel smearing */
+}
+
+/* Authentic Asphalt Grit & Concrete texture */
+.bg-asfalto {
+  background-color: #07080A;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(7,8,10,0.95));
+  background-size: 16px 16px, 100% 100%;
+}
+
+/* Caution Tape Hazard Diagonal Stripes */
+.caution-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    #FFE500,
+    #FFE500 12px,
+    #111111 12px,
+    #111111 24px
+  );
+}
+
+.caution-stripes-red {
+  background: repeating-linear-gradient(
+    -45deg,
+    #EF233C,
+    #EF233C 12px,
+    #111111 12px,
+    #111111 24px
+  );
+}
+
+/* High-Resolution Vector Street 3D Text (Smooth, crisp strokes without aliasing) */
+.text-street-3d {
+  -webkit-text-stroke: 1.2px #000000;
+  paint-order: stroke fill;
+  text-shadow: 
+    0 2px 0 #000000, 
+    2px 3px 0 rgba(0, 0, 0, 0.95);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.text-street-yellow-3d {
+  color: #FFE500;
+  -webkit-text-stroke: 1.2px #000000;
+  paint-order: stroke fill;
+  text-shadow: 
+    0 2px 0 #000000, 
+    2px 3px 0 #000000,
+    0 0 16px rgba(255, 229, 0, 0.45);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Yellow Highlighter Marker Swipe with High-DPI Anti-aliasing */
+.marker-highlight {
+  background-color: #FFE500;
+  color: #000000;
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  font-weight: 900;
+  transform: rotate(-1deg);
+  box-shadow: 2px 3px 0 rgba(0,0,0,0.8);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Red Alert Marker Swipe with High-DPI Anti-aliasing */
+.marker-alert {
+  background: linear-gradient(135deg, #EF233C 0%, #B91C1C 100%);
+  color: #FFFFFF;
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-weight: 900;
+  transform: rotate(1deg);
+  box-shadow: 2px 3px 0 rgba(0,0,0,0.8);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Stabilize transformed & rotated elements against blurry font rasterization */
+.transform,
+[class*="rotate-"],
+[class*="-rotate-"],
+.font-stencil,
+.font-bebas,
+.font-marker {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* Street Frame with Corner Brackets for QR Code and Cards */
+.bracket-box {
+  position: relative;
+}
+.bracket-box::before,
+.bracket-box::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+.bracket-box::before {
+  top: -2px;
+  left: -2px;
+  border-top: 4px solid #FFE500;
+  border-left: 4px solid #FFE500;
+}
+.bracket-box::after {
+  bottom: -2px;
+  right: -2px;
+  border-bottom: 4px solid #FFE500;
+  border-right: 4px solid #FFE500;
+}
+
+/* Scanner line animation for security simulation */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.animate-scanline {
+  animation: scanline 2.2s linear infinite;
+}
+
+/* Stencil & Slide-up Entrance Transitions */
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes stencilStamp {
+  0% {
+    opacity: 0;
+    transform: scale(1.12) rotate(-1.5deg);
+    filter: drop-shadow(0 0 16px rgba(255, 229, 0, 0.7));
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.98) rotate(0.4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.animate-slide-up-fade {
+  animation: slideUpFade 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-stencil-stamp {
+  animation: stencilStamp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Accented Street Borders & Stencil Outlines */
+.border-street-heavy {
+  border-width: 3px;
+  border-style: solid;
+}
+
+.border-stencil-dashed {
+  border-width: 2px;
+  border-style: dashed;
+}
+
+/* Glow effects */
+.glow-whatsapp {
+  box-shadow: 0 0 25px rgba(37, 211, 102, 0.4), 0 0 60px rgba(37, 211, 102, 0.15);
+}
+
+.glow-yellow {
+  box-shadow: 0 0 25px rgba(255, 229, 0, 0.35);
+}
+
+.glow-danger {
+  box-shadow: 0 0 25px rgba(239, 35, 60, 0.4);
+}
+
+/* Mobile & Tablet Optimizations */
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide scrollbar for horizontal carousels */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Safe area padding for mobile bottom nav */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .pb-safe {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
+  }
+}
+

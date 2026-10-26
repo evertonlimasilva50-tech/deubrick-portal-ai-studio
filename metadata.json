@@ -1,0 +1,6 @@
+{
+  "name": "Deu Brick - Classificados da Quebrada RS",
+  "description": "Rede metropolitana de classificados blindada contra golpes (Canoas, Sapucaia, Esteio, Porto Alegre, Gravataí e São Leopoldo).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
